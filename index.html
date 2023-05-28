@@ -11,26 +11,51 @@
     <h1>Financial Ratio Calculator</h1>
     <!-- Tabs -->
     <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'LiquidityAndEfficiency')" id="defaultTab">Liquidity And Efficiency</button>
+        <button class="tablinks" onclick="openTab(event, 'Profitability')" id="defaultTab">Profitability</button>
+        <button class="tablinks" onclick="openTab(event, 'Liquidity')">Liquidity</button>
+        <button class="tablinks" onclick="openTab(event, 'Efficiency')">Efficiency</button>
         <button class="tablinks" onclick="openTab(event, 'Solvency')">Solvency</button>
-        <button class="tablinks" onclick="openTab(event, 'Profitability')">Profitability</button>
         <button class="tablinks" onclick="openTab(event, 'MarketProspects')">Market Prospects</button>
         <button class="tablinks" onclick="openTab(event, 'CashFlowLeverage')">Cash Flow Leverage</button>
         <button class="tablinks" onclick="openTab(event, 'Coverage')">Coverage</button>
     </div>
 
     <!-- Tab content -->
-    <div id="LiquidityAndEfficiency" class="tabcontent">
+    <div id="Profitability" class="tabcontent">
+        <div id="profit-margin-ratio-container">
+            <div class="equation">
+                <span>Profit Margin Ratio</span>
+                <h3>Net Income</h3>
+                <h3>------</h3>
+                <h3>Net Sales</h3>
+            </div>
+            <form>
+                <form class="inputs">
+                    <label for="PMR-net-income">Net Income:</label>
+                    <input type="number" id="PMR-net-income" name="PMR-net-income" min="1" step="0.001" placeholder="Net Income">
+                    <label for="PMR-net-sales">Net Sales:</label>
+                    <input type="number" id="PMR-net-sales" name="PMR-net-sales" min="1" step="0.001" placeholder="Net Sales">
+                </form>
+            </form>
+            <div class="submit">
+                <button onclick="divide('PMR-net-income', 'PMR-net-sales', 'profit-margin-ratio-output')">Submit</button>
+            </div>
+            <div class="output" id="profit-margin-ratio-output">=</div>
+
+        </div>
+    </div>
+    
+    <div id="Liquidity" class="tabcontent">
+        <h3>test</h3>
+        <p>test1</p>
+    </div>
+    <div id="Efficiency" class="tabcontent">
         <h3>test</h3>
         <p>test1</p>
     </div>
     <div id="Solvency" class="tabcontent">
         <h3>test</h3>
         <p>test2</p>
-    </div>
-    <div id="Profitability" class="tabcontent">
-        <h3>test</h3>
-        <p>test3</p>
     </div>
     <div id="MarketProspects" class="tabcontent">
         <h3>test</h3>
@@ -44,8 +69,6 @@
         <h3>test</h3>
         <p>test6</p>
     </div>
-
-    <!-- Input for ratio -->
 
     <!-- Refresh button -->
     <div id="refresh-container">
