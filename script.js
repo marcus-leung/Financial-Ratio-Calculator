@@ -17,19 +17,45 @@ function openTab(evt, ratioCat) {
   evt.currentTarget.className += " active";
 }
 
+function outputTo(out_ratio, raw_answer) {
+// get output container
+  var container = document.getElementById(out_ratio);
+
+  // rounds to 4 decimal places/remove trailing zeros
+  var answer = (Number(raw_answer) === parseInt(raw_answer)) ? parseInt(raw_answer) : Number(raw_answer.toFixed(4));
+  console.log(answer);
+  if (isNaN(answer)) {
+    alert("Invalid Input");
+  }
+  container.textContent = "= " + answer;
+}
+
 function divide(numerator, denominator, out_ratio) {
   // get numerator and denominator
   var nume = parseFloat(document.getElementById(numerator).value);
   var deno = parseFloat(document.getElementById(denominator).value);
 
-  // get output container
-  var container = document.getElementById(out_ratio);
-  console.log(nume + " " + deno);
-  var raw_answer = nume/deno;
-  
-  // rounds to 4 decimal places/remove trailing zeros
-  var answer = (Number(raw_answer) === parseInt(raw_answer)) ? parseInt(raw_answer) : Number(raw_answer.toFixed(4));
-  container.textContent = "= " + answer;
+  outputTo(out_ratio, nume/deno);
+}
+
+function subThenDiv(left, right, bottom, out_ratio) {
+  var l = parseFloat(document.getElementById(left).value);
+  var r = parseFloat(document.getElementById(right).value);
+  var b = parseFloat(document.getElementById(bottom).value);
+
+  var ans1 = l - r;
+  var ans2 = ans1/b;
+  outputTo(out_ratio, ans2);
+}
+
+function divThenMult(top, bottom, right) {
+  var nume = parseFloat(document.getElementById(numerator).value);
+  var deno = parseFloat(document.getElementById(denominator).value);
+  var r = parseFloat(document.getElementById(right).value);
+
+  var ans1 = nume/deno;
+  var ans2 = ans1*r;
+  outputTo(out_ratio, ans2);
 }
 
 document.addEventListener("DOMContentLoaded", function() { //checks if DOM content is loaded then clicks default tab
