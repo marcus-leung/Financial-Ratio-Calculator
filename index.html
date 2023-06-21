@@ -82,10 +82,35 @@
                 </form>
             </form>
             <div class="submit">
-                <button onclick="divide('ROE-net-income', 'ROE-net-sales', 'return-on-equity-output')">Submit</button>
+                <button onclick="divide('ROE-net-income', 'ROE-average-total-equity', 'return-on-equity-output')">Submit</button>
             </div>
             <div class="output" id="return-on-equity-output">=</div>
             <span class="info-hover" data-hover="Measures profitability relative to shareholders' equity">
+                <i class="fa fa-info-circle"></i>
+            </span>
+        </div>
+        <hr>
+        <div id="gross-margin-ratio-container">
+            <div class="equation">
+                <span>Gross Margin Ratio</span>
+                <p>$$\text{Gross Margin Ratio} = \frac{\text{Net sales}-\text{Cost of goods sold}}{\text{Net Sales}}$$</p>
+
+            </div>
+            <form>
+                <form class="inputs">
+                    <label for="GMR-net-sales">Net Sales:</label>
+                    <input type="number" id="GMR-net-sales" name="GMR-net-sales" min="1" step="0.001" placeholder="Net Sales">
+                    <label for="GMR-cogs">Cost of goods sold:</label>
+                    <input type="number" id="GMR-cogs" name="GMR-cogs" min="1" step="0.001" placeholder="Cost of goods sold">
+                    <label for="GMR-net-sales-2">Net Sales:</label>
+                    <input type="number" id="GMR-net-sales-2" name="GMR-net-sales-2" min="1" step="0.001" placeholder="Net Sales">
+                </form>
+            </form>
+            <div class="submit">
+                <button onclick="subThenDiv('GMR-net-sales', 'GMR-cogs', 'GMR-net-sales-2', 'gross-margin-ratio-output')">Submit</button>
+            </div>
+            <div class="output" id="gross-margin-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures gross margin in each sales dollar">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
@@ -308,10 +333,10 @@
         </div>
     </div>
 
-    <!-- Refresh button -->
-    <div id="refresh-container">
+    <!-- Clear button -->
+    <div id="clear-container">
         <div>
-            <button type="button" onclick="refresh()">+</button>
+            <button id="clearInputs" onclick="clearInputs()">clear</button>
         </div>
     </div>
 

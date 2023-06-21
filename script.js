@@ -26,8 +26,9 @@ function outputTo(out_ratio, raw_answer) {
   console.log(answer);
   if (isNaN(answer)) {
     alert("Invalid Input");
+  } else {
+    container.textContent = "= " + answer;
   }
-  container.textContent = "= " + answer;
 }
 
 function divide(numerator, denominator, out_ratio) {
@@ -48,9 +49,9 @@ function subThenDiv(left, right, bottom, out_ratio) {
   outputTo(out_ratio, ans2);
 }
 
-function divThenMult(top, bottom, right) {
-  var nume = parseFloat(document.getElementById(numerator).value);
-  var deno = parseFloat(document.getElementById(denominator).value);
+function divThenMult(top, bottom, right) { //not used yet
+  var nume = parseFloat(document.getElementById(top).value);
+  var deno = parseFloat(document.getElementById(bottom).value);
   var r = parseFloat(document.getElementById(right).value);
 
   var ans1 = nume/deno;
@@ -61,3 +62,22 @@ function divThenMult(top, bottom, right) {
 document.addEventListener("DOMContentLoaded", function() { //checks if DOM content is loaded then clicks default tab
   document.getElementById("defaultTab").click();
 });
+
+function clearInputs() {
+  var inputElements = document.getElementsByTagName("input");
+  
+  for (let i = 0; i < inputElements.length; i++) {
+    if (inputElements[i].type == "number") {
+      inputElements[i].value = "";
+    }
+  }
+
+  var outputElements = document.getElementsByClassName("output");
+
+  for (let j = 0; j < outputElements.length; j++) {
+    if (outputElements[j].textContent != "=") {
+      outputElements[j].textContent = "=";
+    }
+  }
+};
+
