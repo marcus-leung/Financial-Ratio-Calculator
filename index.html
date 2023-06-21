@@ -7,7 +7,7 @@
     <title>Financial Ratio Calculator</title>
     <script src="script.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <h1>Financial Ratio Calculator</h1>
@@ -41,6 +41,9 @@
                 <button onclick="divide('PMR-net-income', 'PMR-net-sales', 'profit-margin-ratio-output')">Submit</button>
             </div>
             <div class="output" id="profit-margin-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures net income in each sales dollar">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="return-on-assets-container">
@@ -60,6 +63,9 @@
                 <button onclick="divide('ROA-net-income', 'ROA-average-total-assets', 'return-on-assets-output')">Submit</button>
             </div>
             <div class="output" id="return-on-assets-output">=</div>
+            <span class="info-hover" data-hover="Measures overall profitability relative to total assets">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="return-on-equity-container">
@@ -79,6 +85,9 @@
                 <button onclick="divide('ROE-net-income', 'ROE-net-sales', 'return-on-equity-output')">Submit</button>
             </div>
             <div class="output" id="return-on-equity-output">=</div>
+            <span class="info-hover" data-hover="Measures profitability relative to shareholders' equity">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
     
@@ -101,6 +110,9 @@
                 <button onclick="divide('C-current-assets', 'C-current-liabilities', 'current-ratio-output')">Submit</button>
             </div>
             <div class="output" id="current-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures short-term solvency and debt-paying ability">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
 
@@ -123,6 +135,9 @@
                 <button onclick="divide('IT-cogs', 'IT-average-inventory', 'inventory-turnover-output')">Submit</button>
             </div>
             <div class="output" id="inventory-turnover-output">=</div>
+            <span class="info-hover" data-hover="Measures how quickly inventory is sold">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="inventory-turnover-container">
@@ -143,6 +158,9 @@
                 <button onclick="divide('ART-net-sales', 'ART-average-accounts-receivable', 'accounts-receivable-turnover-output')">Submit</button>
             </div>
             <div class="output" id="accounts-receivable-turnover-output">=</div>
+            <span class="info-hover" data-hover="Measures how quickly account receivables are collected">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
 
@@ -165,6 +183,9 @@
                 <button onclick="divide('DR-total-liabilities', 'DR-total-assets', 'debt-ratio-output')">Submit</button>
             </div>
             <div class="output" id="debt-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures creditor financing and leverage">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="equity-ratio-container">
@@ -185,6 +206,9 @@
                 <button onclick="divide('ER-total-equity', 'ER-total-assets', 'equity-ratio-output')">Submit</button>
             </div>
             <div class="output" id="equity-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures owner financing">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="debt-to-equity-ratio-container">
@@ -205,6 +229,9 @@
                 <button onclick="divide('DTER-total-liabilities', 'DTER-total-equity', 'debt-to-equity-ratio-output')">Submit</button>
             </div>
             <div class="output" id="debt-to-equity-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures the proportion of debt to equity financing">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
 
@@ -227,6 +254,9 @@
                 <button onclick="divide('PER-market-price-per-common-share', 'PER-earnings-per-share', 'price-earnings-ratio-output')">Submit</button>
             </div>
             <div class="output" id="price-earnings-ratio-output">=</div>
+            <span class="info-hover" data-hover="Measures the market value relative to earnings">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
         <hr>
         <div id="dividend-yield-container">
@@ -247,6 +277,9 @@
                 <button onclick="divide('DY-annual-cash-dividends-per-share', 'DY-market-price-per-share', 'dividend-yield-output')">Submit</button>
             </div>
             <div class="output" id="dividend-yield-output">=</div>
+            <span class="info-hover" data-hover="Measures the cash return per common share">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
 
@@ -269,6 +302,9 @@
                 <button onclick="divide('EBITDA-EBITDA', 'EBITDA-interest-expense', 'EBITDA-coverage-output')">Submit</button>
             </div>
             <div class="output" id="EBITDA-coverage-output">=</div>
+            <span class="info-hover" data-hover="Measures the ability to cover interest and debt obligations">
+                <i class="fa fa-info-circle"></i>
+            </span>
         </div>
     </div>
 

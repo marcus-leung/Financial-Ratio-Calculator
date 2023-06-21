@@ -39,3 +39,29 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.info-hover {
+  position: relative;
+}
+
+.info-hover:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: rgb(185, 185, 185);
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  border-color: black;
+  padding: 5px 5px;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  left: 120%;
+  width: max-content;
+}
+
+.info-hover:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
