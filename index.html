@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>Financial Ratio Calculator</h1>
+    <h2>Created by Marcus Leung</h2>
     <!-- Tabs -->
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'Profitability')" id="defaultTab">Profitability</button>
@@ -23,80 +24,86 @@
 
     <!-- Tab content -->
     <div id="Profitability" class="tabcontent">
-        <div id="profit-margin-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Profit Margin Ratio</span>
                 <p>$$\text{Profit Margin Ratio} = \frac{\text{Net income}}{\text{Average Total Equity}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="PMR-net-income">Net Income:</label>
                     <input type="number" id="PMR-net-income" name="PMR-net-income" min="1" step="0.001" placeholder="Net Income">
                     <label for="PMR-net-sales">Net Sales:</label>
                     <input type="number" id="PMR-net-sales" name="PMR-net-sales" min="1" step="0.001" placeholder="Net Sales">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('PMR-net-income', 'PMR-net-sales', 'profit-margin-ratio-output')">Submit</button>
             </div>
-            <div class="output" id="profit-margin-ratio-output">=</div>
+            <div class="output" id="profit-margin-ratio-output">= </div>
+            </div>
+            
             <span class="info-hover" data-hover="Measures net income in each sales dollar">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="return-on-assets-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Return on Assets</span>
                 <p>$$\text{ROA} = \frac{\text{Net income}}{\text{Average Total Assets}}$$</p>
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="ROA-net-income">Net Income:</label>
                     <input type="number" id="ROA-net-income" name="ROA-net-income" min="1" step="0.001" placeholder="Net Income">
                     <label for="ROA-average-total-assets">Average Total Assets:</label>
                     <input type="number" id="ROA-average-total-assets" name="ROA-average-total-assets" min="1" step="0.001" placeholder="Average total Assets">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('ROA-net-income', 'ROA-average-total-assets', 'return-on-assets-output')">Submit</button>
             </div>
             <div class="output" id="return-on-assets-output">=</div>
+            </div>
+
             <span class="info-hover" data-hover="Measures overall profitability relative to total assets">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="return-on-equity-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Return on Equity</span>
                 <p>$$\text{ROE} = \frac{\text{Net income}}{\text{Average Total Equity}}$$</p>
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="ROE-net-income">Net Income:</label>
                     <input type="number" id="ROE-net-income" name="ROE-net-income" min="1" step="0.001" placeholder="Net Income">
                     <label for="ROE-average-total-equity">Average Total Equity:</label>
                     <input type="number" id="ROE-average-total-equity" name="ROE-average-total-equity" min="1" step="0.001" placeholder="Average total Equity">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('ROE-net-income', 'ROE-average-total-equity', 'return-on-equity-output')">Submit</button>
             </div>
             <div class="output" id="return-on-equity-output">=</div>
+            </div>
+
             <span class="info-hover" data-hover="Measures profitability relative to shareholders' equity">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="gross-margin-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Gross Margin Ratio</span>
                 <p>$$\text{Gross Margin Ratio} = \frac{\text{Net sales}-\text{Cost of goods sold}}{\text{Net Sales}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="GMR-net-sales">Net Sales:</label>
                     <input type="number" id="GMR-net-sales" name="GMR-net-sales" min="1" step="0.001" placeholder="Net Sales">
@@ -105,11 +112,12 @@
                     <label for="GMR-net-sales-2">Net Sales:</label>
                     <input type="number" id="GMR-net-sales-2" name="GMR-net-sales-2" min="1" step="0.001" placeholder="Net Sales">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="subThenDiv('GMR-net-sales', 'GMR-cogs', 'GMR-net-sales-2', 'gross-margin-ratio-output')">Submit</button>
             </div>
             <div class="output" id="gross-margin-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures gross margin in each sales dollar">
                 <i class="fa fa-info-circle"></i>
             </span>
@@ -117,24 +125,25 @@
     </div>
     
     <div id="Liquidity" class="tabcontent">
-        <div id="current-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Current Ratio</span>
                 <p>$$\text{Current Ratio} = \frac{\text{Current Assets}}{\text{Current Liabilities}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="C-current-assets">Current Assets:</label>
                     <input type="number" id="C-current-assets" name="C-current-assets" min="1" step="0.001" placeholder="Current Assets">
                     <label for="C-current-liabilities">Current Liabilities:</label>
                     <input type="number" id="C-current-liabilities" name="C-current-liabilities" min="1" step="0.001" placeholder="Current Liabilities">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('C-current-assets', 'C-current-liabilities', 'current-ratio-output')">Submit</button>
             </div>
             <div class="output" id="current-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures short-term solvency and debt-paying ability">
                 <i class="fa fa-info-circle"></i>
             </span>
@@ -142,47 +151,49 @@
     </div>
 
     <div id="Efficiency" class="tabcontent">
-        <div id="inventory-turnover-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Inventory Turnover</span>
                 <p>$$\text{Inventory Turnover} = \frac{\text{Cost of Goods Sold}}{\text{Average Inventory}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="IT-cogs">Cost of Goods Sold:</label>
                     <input type="number" id="IT-cogs" name="IT-cogs" min="1" step="0.001" placeholder="Cost of Goods Sold">
                     <label for="IT-average-inventory">Average Inventory:</label>
                     <input type="number" id="IT-average-inventory" name="IT-average-inventory" min="1" step="0.001" placeholder="Average Inventory">
                 </form>
-            </form>
+        
             <div class="submit">
                 <button onclick="divide('IT-cogs', 'IT-average-inventory', 'inventory-turnover-output')">Submit</button>
             </div>
             <div class="output" id="inventory-turnover-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures how quickly inventory is sold">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="inventory-turnover-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Accounts Receivable Turnover</span>
                 <p>$$\text{Accounts Receivable Turnover} = \frac{\text{Net Sales}}{\text{Average Accounts Receivable}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="ART-net-sales">Net Sales:</label>
                     <input type="number" id="ART-net-sales" name="ART-net-sales" min="1" step="0.001" placeholder="Net Sales">
                     <label for="ART-average-accounts-receivable">Average Accounts Receivable:</label>
                     <input type="number" id="ART-average-accounts-receivable" name="ART-average-accounts-receivable" min="1" step="0.001" placeholder="Average Accounts Receivable">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('ART-net-sales', 'ART-average-accounts-receivable', 'accounts-receivable-turnover-output')">Submit</button>
             </div>
             <div class="output" id="accounts-receivable-turnover-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures how quickly account receivables are collected">
                 <i class="fa fa-info-circle"></i>
             </span>
@@ -190,70 +201,72 @@
     </div>
 
     <div id="Solvency" class="tabcontent">
-        <div id="debt-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Debt Ratio</span>
                 <p>$$\text{Debt Ratio} = \frac{\text{Total Liabilities}}{\text{Total Assets}}$$</p>
-
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="DR-total-liabilities">Total Liabilities:</label>
                     <input type="number" id="DR-total-liabilities" name="DR-total-liabilities" min="1" step="0.001" placeholder="Total Liabilities">
                     <label for="DR-total-assets">Total Assets:</label>
                     <input type="number" id="DR-total-assets" name="DR-total-assets" min="1" step="0.001" placeholder="Total Assets">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('DR-total-liabilities', 'DR-total-assets', 'debt-ratio-output')">Submit</button>
             </div>
             <div class="output" id="debt-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures creditor financing and leverage">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="equity-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Equity Ratio</span>
                 <p>$$\text{Equity Ratio} = \frac{\text{Total Equity}}{\text{Total Assets}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="ER-total-equity">Total Equity:</label>
                     <input type="number" id="ER-total-equity" name="ER-total-equity" min="1" step="0.001" placeholder="Total Equity">
                     <label for="ER-total-assets">Total Assets:</label>
                     <input type="number" id="ER-total-assets" name="ER-total-assets" min="1" step="0.001" placeholder="Total Assets">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('ER-total-equity', 'ER-total-assets', 'equity-ratio-output')">Submit</button>
             </div>
             <div class="output" id="equity-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures owner financing">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="debt-to-equity-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Debt-to-equity Ratio</span>
                 <p>$$\text{Debt-to-equity Ratio} = \frac{\text{Total Liabilities}}{\text{Total Equity}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="DTER-total-liabilities">Total Liabilities:</label>
                     <input type="number" id="DTER-total-liabilities" name="DTER-total-liabilities" min="1" step="0.001" placeholder="Total Liabilities">
                     <label for="DTER-total-equity">Total Equity:</label>
                     <input type="number" id="DTER-total-equity" name="DTER-total-equity" min="1" step="0.001" placeholder="Total Equity">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('DTER-total-liabilities', 'DTER-total-equity', 'debt-to-equity-ratio-output')">Submit</button>
             </div>
             <div class="output" id="debt-to-equity-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures the proportion of debt to equity financing">
                 <i class="fa fa-info-circle"></i>
             </span>
@@ -261,47 +274,49 @@
     </div>
 
     <div id="MarketProspects" class="tabcontent">
-        <div id="price-earnings-ratio-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Price-earnings Ratio</span>
                 <p>$$\text{Price-earnings Ratio} = \frac{\text{Market Price per Common Share}}{\text{Earnings per share}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="PER-market-price-per-common-share">Market Price per Common Share:</label>
                     <input type="number" id="PER-market-price-per-common-share" name="PER-market-price-per-common-share" min="1" step="0.001" placeholder="Market Price per Common Share">
                     <label for="PER-earnings-per-share">Earnings per Share:</label>
                     <input type="number" id="PER-earnings-per-share" name="PER-earnings-per-share" min="1" step="0.001" placeholder="Earnings per Share">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('PER-market-price-per-common-share', 'PER-earnings-per-share', 'price-earnings-ratio-output')">Submit</button>
             </div>
             <div class="output" id="price-earnings-ratio-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures the market value relative to earnings">
                 <i class="fa fa-info-circle"></i>
             </span>
         </div>
         <hr>
-        <div id="dividend-yield-container">
+        <div class="content-container">
             <div class="equation">
                 <span>Dividend Yield</span>
                 <p>$$\text{Dividend Yield} = \frac{\text{Annual cash dividends per share}}{\text{Market price per share}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="DY-annual-cash-dividends-per-share">Annual cash dividends per share:</label>
                     <input type="number" id="DY-annual-cash-dividends-per-share" name="DY-annual-cash-dividends-per-share" min="1" step="0.001" placeholder="Annual cash dividends per share">
                     <label for="DY-market-price-per-share">Market price per share:</label>
                     <input type="number" id="DY-market-price-per-share" name="DY-market-price-per-share" min="1" step="0.001" placeholder="Market price per share">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('DY-annual-cash-dividends-per-share', 'DY-market-price-per-share', 'dividend-yield-output')">Submit</button>
             </div>
             <div class="output" id="dividend-yield-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures the cash return per common share">
                 <i class="fa fa-info-circle"></i>
             </span>
@@ -309,24 +324,25 @@
     </div>
 
     <div id="Coverage" class="tabcontent">
-        <div id="ebitda-coverage-container">
+        <div class="content-container">
             <div class="equation">
                 <span>EBITDA (earnings before interest, taxes, depreciation, and amoritzation) Coverage</span>
                 <p>$$\text{EBITDA Coverage} = \frac{\text{EBITDA}}{\text{Interest Expense}}$$</p>
 
             </div>
-            <form>
+            <div class="input-content">
                 <form class="inputs">
                     <label for="EBITDA-EBITDA">EBITDA:</label>
                     <input type="number" id="EBITDA-EBITDA" name="EBITDA-EBITDA" min="1" step="0.001" placeholder="EBITDA">
                     <label for="EBITDA-interest-expense">Interest Expense:</label>
                     <input type="number" id="EBITDA-interest-expense" name="EBITDA-interest-expense" min="1" step="0.001" placeholder="Interest Expense">
                 </form>
-            </form>
+            
             <div class="submit">
                 <button onclick="divide('EBITDA-EBITDA', 'EBITDA-interest-expense', 'EBITDA-coverage-output')">Submit</button>
             </div>
             <div class="output" id="EBITDA-coverage-output">=</div>
+            </div>
             <span class="info-hover" data-hover="Measures the ability to cover interest and debt obligations">
                 <i class="fa fa-info-circle"></i>
             </span>
