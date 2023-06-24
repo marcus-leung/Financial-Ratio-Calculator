@@ -126,3 +126,17 @@ input::-webkit-inner-spin-button {
   opacity: 1;
   visibility: visible;
 }
+
+#clear-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+#clearInputs {
+  font-size: large;
+  padding: 10px;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 1px;
+  background-color: rgb(214, 210, 210);
+}
