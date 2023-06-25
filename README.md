@@ -11,5 +11,6 @@ Web application built with HTML, CSS, and Javascript
 2. Display equations using MathJax
 3. Hover of i icon for ratio description 
 
-![image1](https://https://github.com/marcus-leung/Financial-Ratio-Calculator/demo/image1.png)
-![image2](https://https://github.com/marcus-leung/Financial-Ratio-Calculator/demo/image2.png)
+    ![image1](https://github.com/marcus-leung/Financial-Ratio-Calculator/blob/main/demo/image1.png)
+
+    ![image2](https://github.com/marcus-leung/Financial-Ratio-Calculator/blob/main/demo/image2.png)
